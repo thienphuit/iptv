@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
 });
 
 class Block extends Component {
-  handlePaddings() {
+  handlePaddings = () => {
     const {padding} = this.props;
     if (typeof padding === 'number') {
       return {
@@ -20,7 +20,7 @@ class Block extends Component {
         paddingLeft: padding,
       };
     }
-  
+
     if (typeof padding === 'object') {
       const paddingSize = Object.keys(padding).length;
       switch (paddingSize) {
@@ -56,7 +56,7 @@ class Block extends Component {
     }
   };
 
-  handleMargins() {
+  handleMargins = () => {
     const {margin} = this.props;
     if (typeof margin === 'number') {
       return {
@@ -66,7 +66,7 @@ class Block extends Component {
         marginLeft: margin,
       };
     }
-  
+
     if (typeof margin === 'object') {
       const marginSize = Object.keys(margin).length;
       switch (marginSize) {
@@ -100,7 +100,7 @@ class Block extends Component {
           };
       }
     }
-  }
+  };
   render() {
     const {
       paddinghorizontal,

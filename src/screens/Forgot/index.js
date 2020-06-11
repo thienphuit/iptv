@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import s from './styles';
 
-const VALID_EMAIL = "thienphu";
+const VALID_EMAIL = 'thienphu';
 
 export default class Forgot extends Component {
   state = {
@@ -17,7 +17,7 @@ export default class Forgot extends Component {
     errors: [],
     loading: false,
   };
-  handleForgot() {
+  handleForgot = () => {
     const {navigation} = this.props;
     const {email} = this.state;
     const errors = [];
@@ -45,8 +45,8 @@ export default class Forgot extends Component {
         {cancelable: false},
       );
     }
-  }
-  render() {
+  };
+  render = () => {
     const hasErrors = key => (errors.includes(key) ? s.hasError : null);
     const {navigation} = this.props;
     const {loading, errors} = this.state;
@@ -68,7 +68,7 @@ export default class Forgot extends Component {
             <Button gradient onPress={() => this.handleForgot()}>
               {loading ? (
                 <ActivityIndicator size="small" color="white" />
-              ):(
+              ) : (
                 <TextView bold white center>
                   Forgot
                 </TextView>
@@ -84,5 +84,5 @@ export default class Forgot extends Component {
         </Block>
       </KeyboardAvoidingView>
     );
-  }
+  };
 }

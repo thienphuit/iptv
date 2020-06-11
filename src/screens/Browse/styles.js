@@ -1,7 +1,7 @@
 import {StyleSheet, Dimensions} from 'react-native';
 import {theme} from '../../constants';
 
-const {width}  = Dimensions.get('window');
+const {width} = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   header: {
@@ -26,14 +26,14 @@ const styles = StyleSheet.create({
     borderBottomWidth: 3,
   },
   categories: {
-      flexWrap: 'wrap',
-      paddingHorizontal: theme.sizes.base *1.5,
-      marginBottom: theme.sizes.base * 3.5,
+    flexWrap: 'wrap',
+    paddingHorizontal: theme.sizes.base * 1.5,
+    marginBottom: theme.sizes.base * 3.5,
   },
   category: {
-      minWidth: (width - theme.sizes.padding * 2.4 - theme.sizes.base)/2,
-      maxWidth: (width - theme.sizes.padding * 2.4 -theme.sizes.base)/2,
-      maxHeight: (width -theme.sizes.padding * 2.4 - theme.sizes.base)/2,
+    minWidth: (width - theme.sizes.padding * 2.4 - theme.sizes.base) / 2,
+    maxWidth: (width - theme.sizes.padding * 2.4 - theme.sizes.base) / 2,
+    maxHeight: (width - theme.sizes.padding * 2.4 - theme.sizes.base) / 2,
   },
   scollView: {
     paddingVertical: theme.sizes.base * 2,
@@ -45,7 +45,6 @@ const styles = StyleSheet.create({
     bottom: 0,
     right: 0,
   },
-
 });
 
 export default styles;

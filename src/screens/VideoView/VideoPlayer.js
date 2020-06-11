@@ -1,4 +1,3 @@
-
 import React, {Component} from 'react';
 import Video from 'react-native-video';
 import {
@@ -789,15 +788,22 @@ export default class VideoPlayer extends Component {
         this.setSeekerPosition(position);
         let state = this.state;
 
-        if (this.player.scrubbingTimeStep > 0 && !state.loading && !state.scrubbing) {
+        if (
+          this.player.scrubbingTimeStep > 0 &&
+          !state.loading &&
+          !state.scrubbing
+        ) {
           const time = this.calculateTimeFromSeekerPosition();
           const timeDifference = Math.abs(state.currentTime - time) * 1000;
 
-          if (time < state.duration && timeDifference >= this.player.scrubbingTimeStep) {
+          if (
+            time < state.duration &&
+            timeDifference >= this.player.scrubbingTimeStep
+          ) {
             state.scrubbing = true;
 
             this.setState(state);
-            setTimeout( () => {
+            setTimeout(() => {
               this.player.ref.seek(time, this.player.scrubbingTimeStep);
             }, 1);
           }

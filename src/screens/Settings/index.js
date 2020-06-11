@@ -24,12 +24,12 @@ class Settings extends Component {
   componentDidMount() {
     userProfile().then(json => {
       //console.log(json[0]);
-    /*   this.setState({
+      /*   this.setState({
           user: json[0]
       }) */
       this.props.getUser(json[0]);
     });
-   // this.setState({profile: this.props.profile});
+    // this.setState({profile: this.props.profile});
   }
   toggleEdit(name) {
     const {editing} = this.state;
@@ -41,8 +41,8 @@ class Settings extends Component {
     this.setState({profile});
   }
   renderEdit(name) {
-    const { editing} = this.state;
-    const {profile,user} = this.props;
+    const {editing} = this.state;
+    const {profile, user} = this.props;
     if (editing === name) {
       return (
         <TextInput
@@ -179,19 +179,22 @@ class Settings extends Component {
     );
   }
 }
-const mapStatetoProps = state =>{
-    return {
-        user: state.user
-    }
-}
-const mapDispathToProp = (dispath, props) =>{
-    return {
-        getUser: user => {
-            dispath(fetchUser(user))
-        }
-    }
-}
+const mapStatetoProps = state => {
+  return {
+    user: state.user,
+  };
+};
+const mapDispathToProp = (dispath, props) => {
+  return {
+    getUser: user => {
+      dispath(fetchUser(user));
+    },
+  };
+};
 Settings.defaultProps = {
   profile: mocks.profile,
 };
-export default connect(mapStatetoProps, mapDispathToProp)(Settings);
+export default connect(
+  mapStatetoProps,
+  mapDispathToProp,
+)(Settings);

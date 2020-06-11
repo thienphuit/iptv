@@ -14,7 +14,6 @@ import s from './styles';
 import Button from '../../components/Button';
 const {width, height} = Dimensions.get('window');
 
-
 class Welcome extends Component {
   state = {
     showTerms: false,
@@ -61,7 +60,7 @@ class Welcome extends Component {
             </TextView>
           </ScrollView>
           <Block middle center padding={[theme.sizes.base / 2, 0]}>
-            <Button  gradient onPress={() => {}}>
+            <Button gradient onPress={() => {}}>
               <TextView>I understand</TextView>
             </Button>
           </Block>
@@ -69,7 +68,7 @@ class Welcome extends Component {
       </Modal>
     );
   }
-  renderIllustration() {
+  renderIllustration = () => {
     const {illustrations} = this.props;
     return (
       <FlatList
@@ -82,20 +81,16 @@ class Welcome extends Component {
         extraData={this.state}
         keyExtractor={(item, index) => `${item.id}`}
         renderItem={({item}) => (
-          <Image
-            source={item.source}
-            resizeMode="contain"
-            style={{width, height: height / 2, overflow: 'visible'}}
-          />
+          <Image source={item.source} resizeMode="contain" style={s.image} />
         )}
-        onScroll={Animated.event([
-          {nativeEvent: {contentOffset: {x: this.scrollX}}}]
-          ,{useNativeDriver: false}
+        onScroll={Animated.event(
+          [{nativeEvent: {contentOffset: {x: this.scrollX}}}],
+          {useNativeDriver: false},
         )}
       />
     );
-  }
-  renderSteps() {
+  };
+  renderSteps = () => {
     const {illustrations} = this.props;
     const stepPosition = Animated.divide(this.scrollX, width);
     return (
@@ -117,7 +112,7 @@ class Welcome extends Component {
         })}
       </Block>
     );
-  }
+  };
 
   render() {
     const {navigation} = this.props;
@@ -159,7 +154,7 @@ class Welcome extends Component {
       </Block>
     );
   }
-};
+}
 Welcome.defaultProps = {
   illustrations: [
     {id: 1, source: require('../../assets/images/illustration_1.png')},

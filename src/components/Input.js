@@ -85,7 +85,7 @@ class Input extends Component {
           keyboardType={inputType}
           {...props}
         />
-         {this.renderRight()}
+        {this.renderRight()}
         {this.renderToggle()}
       </Block>
     );

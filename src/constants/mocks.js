@@ -77,4 +77,4 @@ const profile = {
   newsletter: false,
 };
 
-export {categories, explore, products, profile}
+export {categories, explore, products, profile};

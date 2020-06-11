@@ -3,7 +3,6 @@ import {Button, TextView, Block, Input} from '../../components';
 import {theme} from '../../constants';
 import s from './styles';
 import {
-  StyleSheet,
   ActivityIndicator,
   Keyboard,
   KeyboardAvoidingView,
@@ -17,7 +16,7 @@ export default class SignUp extends Component {
     password: null,
     username: null,
   };
-  handleSignUp() {
+  handleSignUp = () => {
     console.log('SignUp');
     const {navigation} = this.props;
     const {email, username, password} = this.state;
@@ -25,9 +24,10 @@ export default class SignUp extends Component {
     Keyboard.dismiss();
     this.setState({loading: true});
 
-   // if (!email) errors.push('email');
-   // if (!username) errors.push('username');
-   // if (!password) errors.push('password');
+    //compare with api
+    // if (!email) errors.push('email');
+    // if (!username) errors.push('username');
+    // if (!password) errors.push('password');
 
     this.setState({errors, loading: false});
 
@@ -46,7 +46,7 @@ export default class SignUp extends Component {
         {cancelable: false},
       );
     }
-  }
+  };
   render() {
     const {loading, errors} = this.state;
     const hasErrors = key => (errors.includes(key) ? s.hastErrors : null);

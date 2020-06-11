@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {Text, StyleSheet} from 'react-native';
 import {theme} from '../constants';
 const styles = StyleSheet.create({
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
   small: theme.fonts.small,
 });
 class TextView extends Component {
-  render(){
+  render() {
     const {
       h1,
       h2,
@@ -79,7 +79,7 @@ class TextView extends Component {
       style,
       children,
       ...props
-    } = this.props
+    } = this.props;
     const stylesConponent = [
       styles.text,
       h1 && styles.h1,
@@ -117,9 +117,9 @@ class TextView extends Component {
     ];
     return (
       <Text style={stylesConponent} {...props}>
-          {children}
-        </Text>
-    )
-  } 
+        {children}
+      </Text>
+    );
+  }
 }
-export default TextView
+export default TextView;

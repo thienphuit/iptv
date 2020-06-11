@@ -5,8 +5,6 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Welcome from '../screens/Welcome';
 import Login from '../screens/Login';
 import Browse from '../screens/Browse';
-import Block from '../components/Block';
-import {StyleSheet, Image} from 'react-native';
 import Forgot from '../screens/Forgot';
 import {theme} from '../constants';
 import SignUp from '../screens/SignUp';
@@ -46,14 +44,6 @@ const AuthStack = () => (
   </Stack.Navigator>
 );
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 export default () => (
   <NavigationContainer>
     <AuthStack />

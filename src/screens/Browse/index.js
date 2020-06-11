@@ -23,14 +23,14 @@ class Browse extends Component {
     this.setState({categories: this.props.categories});
   }
 
-  handleTab(tab) {
+  handleTab = tab => {
     const {categories} = this.props;
     const filtered = categories.filter(category =>
       category.tags.includes(tab.toLowerCase()),
     );
     this.setState({active: tab, categories: filtered});
-  }
-  renderTab(tab) {
+  };
+  renderTab = tab => {
     const {active} = this.state;
     const isActive = active === tab;
     return (
@@ -43,7 +43,7 @@ class Browse extends Component {
         </TextView>
       </TouchableOpacity>
     );
-  }
+  };
 
   render() {
     const {profile, navigation, channels} = this.props;

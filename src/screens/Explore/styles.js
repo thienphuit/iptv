@@ -1,7 +1,6 @@
 import {StyleSheet, Dimensions} from 'react-native';
 import {theme} from '../../constants';
 
-
 const {width, height} = Dimensions.get('window');
 const styles = StyleSheet.create({
   header: {
@@ -21,17 +20,17 @@ const styles = StyleSheet.create({
     paddingRight: theme.sizes.base * 1.5,
   },
   searchRight: {
-      top: 0,
-      marginVertical: 0,
-      backgroundColor: 'transparent'
+    top: 0,
+    marginVertical: 0,
+    backgroundColor: 'transparent',
   },
   searchIcon: {
-      position: 'absolute',
-      right: theme.sizes.base / 1.333,
-      top: theme.sizes.base / 1.6,
+    position: 'absolute',
+    right: theme.sizes.base / 1.333,
+    top: theme.sizes.base / 1.6,
   },
   explore: {
-      marginHorizontal: theme.sizes.padding * 1.25
+    marginHorizontal: theme.sizes.padding * 1.25,
   },
   image: {
     minHeight: 100,
@@ -54,7 +53,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     height: height * 0.1,
     width,
-    paddingBottom: theme.sizes.base * 4
-  }
-})
+    paddingBottom: theme.sizes.base * 4,
+  },
+});
 export default styles;

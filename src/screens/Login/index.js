@@ -19,7 +19,7 @@ class Login extends Component {
     errors: [],
     loading: false,
   };
-  handleLogin() {
+  handleLogin = () => {
     const {navigation} = this.props;
     const {email, password} = this.props;
     const errors = [];
@@ -27,7 +27,7 @@ class Login extends Component {
     this.setState({loading: true});
 
     //check with backend Api
-   /*  if (email !== VALID_EMAIL) {
+    /*  if (email !== VALID_EMAIL) {
       errors.push('email');
     }
     if (password !== VALID_PASSWORD) {
@@ -45,13 +45,13 @@ class Login extends Component {
         },
       ]);
     }
-  }
+  };
   render() {
     const {loading, errors} = this.state;
     const hasErrors = key => (errors.includes(key) ? s.hastErrors : null);
     const {navigation} = this.props;
     return (
-      <KeyboardAvoidingView style={s.login} behavior='padding'>
+      <KeyboardAvoidingView style={s.login} behavior="padding">
         <Block padding={[0, theme.sizes.base * 2]}>
           <TextView h1 bold>
             Login

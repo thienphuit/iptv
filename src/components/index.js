@@ -6,4 +6,4 @@ import Card from './Card';
 import Badge from './Badge';
 import Divider from './Divider';
 
-export { Block, Button, TextView, Input, Card, Badge, Divider }
+export {Block, Button, TextView, Input, Card, Badge, Divider};
