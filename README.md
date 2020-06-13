@@ -1,2 +1,2 @@
 # iptv
-Channel Iptv
+Channel Iptv.
