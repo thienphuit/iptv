@@ -19,7 +19,7 @@ class Welcome extends Component {
     showTerms: false,
   };
   scrollX = new Animated.Value(0);
-  renderTermService() {
+  renderTermService = () => {
     return (
       <Modal animationType="slide" visible={this.state.showTerms}>
         <Block
@@ -67,7 +67,7 @@ class Welcome extends Component {
         </Block>
       </Modal>
     );
-  }
+  };
   renderIllustration = () => {
     const {illustrations} = this.props;
     return (
@@ -81,7 +81,11 @@ class Welcome extends Component {
         extraData={this.state}
         keyExtractor={(item, index) => `${item.id}`}
         renderItem={({item}) => (
-          <Image source={item.source} resizeMode="contain" style={s.image} />
+          <Image
+            source={item.source}
+            resizeMode="contain"
+            style={{width, height: height / 2, overflow: 'visible'}}
+          />
         )}
         onScroll={Animated.event(
           [{nativeEvent: {contentOffset: {x: this.scrollX}}}],

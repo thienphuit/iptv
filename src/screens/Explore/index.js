@@ -1,13 +1,7 @@
 import React, {Component} from 'react';
 import {Block, Button, TextView, Input} from '../../components';
 import s from './styles';
-import {
-  Dimensions,
-  Image,
-  StyleSheet,
-  ScrollView,
-  TouchableOpacity,
-} from 'react-native';
+import {Dimensions, Image, ScrollView, TouchableOpacity} from 'react-native';
 import {theme, mocks} from '../../constants';
 import FontAweSome from 'react-native-vector-icons/FontAwesome';
 import {Animated} from 'react-native';
@@ -72,8 +66,8 @@ class Explore extends Component {
       </TouchableOpacity>
     );
   }
-  renderExplore() {
-    const {images, navigation} = this.props;
+  renderExplore = () => {
+    const {images} = this.props;
     const mainImage = images[0];
 
     return (
@@ -89,8 +83,8 @@ class Explore extends Component {
         </Block>
       </Block>
     );
-  }
-  renderFooter() {
+  };
+  renderFooter = () => {
     return (
       <LinerGradient
         locations={[0.5, 1]}
@@ -103,7 +97,7 @@ class Explore extends Component {
         </Button>
       </LinerGradient>
     );
-  }
+  };
   render() {
     return (
       <Block>

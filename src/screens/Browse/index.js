@@ -3,9 +3,8 @@ import {Block, TextView, Button, Card, Badge} from '../../components';
 import s from './styles';
 import {Image, TouchableOpacity, ScrollView} from 'react-native';
 import {mocks} from '../../constants';
-import {fetchChannelSuccess} from '../../actions/channelAction';
+import {fetchMovies} from '../../actions/channelAction';
 import {connect} from 'react-redux';
-import callApi from '../../utils/apiCaller';
 
 class Browse extends Component {
   constructor(props) {
@@ -17,9 +16,7 @@ class Browse extends Component {
     };
   }
   componentDidMount() {
-    callApi().then(json => {
-      this.props.fetchAllChannel(json.movies);
-    });
+    this.props.fetchMovies();
     this.setState({categories: this.props.categories});
   }
 
@@ -49,7 +46,7 @@ class Browse extends Component {
     const {profile, navigation, channels} = this.props;
     const {categories} = this.state;
     const tabs = ['Product', 'Inspirations', 'Shop'];
-
+    //console.log('aaaaaa', channels);
     return (
       <Block>
         <Block flex={false} row center space="between" style={s.header}>
@@ -70,7 +67,7 @@ class Browse extends Component {
               // navigation.navigate('Explore',{category})}
               <TouchableOpacity
                 key={category.id}
-                onPress={() => navigation.navigate('VideoView')}>
+                onPress={() => navigation.navigate('VideoView', {category})}>
                 <Card center middle shadow style={s.category}>
                   <Badge
                     margin={[0, 0, 15]}
@@ -94,18 +91,14 @@ class Browse extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = ({channels}) => {
   return {
-    channels: state.channels,
+    channels: channels.link,
   };
 };
 
-const mapDispatchToProps = (dispatch, props) => {
-  return {
-    fetchAllChannel: channels => {
-      dispatch(fetchChannelSuccess(channels));
-    },
-  };
+const mapDispatchToProps = {
+  fetchMovies,
 };
 
 Browse.defaultProps = {

@@ -4,7 +4,7 @@ import s from './styles';
 import {Image, ScrollView, TextInput, Switch} from 'react-native';
 import Slider from '@react-native-community/slider';
 import {theme, mocks} from '../../constants';
-import userProfile from '../../utils/apiUser';
+//import userProfile from '../../utils/apiUser';
 import {connect} from 'react-redux';
 import {fetchUser} from '../../actions/userAction';
 class Settings extends Component {
@@ -17,45 +17,38 @@ class Settings extends Component {
       monthly: 1700,
       notifications: true,
       newsletter: false,
-      user: {},
+      users: {},
     };
   }
 
   componentDidMount() {
-    userProfile().then(json => {
-      //console.log(json[0]);
-      /*   this.setState({
-          user: json[0]
-      }) */
-      this.props.getUser(json[0]);
-    });
-    // this.setState({profile: this.props.profile});
+    this.props.getUser();
   }
-  toggleEdit(name) {
+  toggleEdit = name => {
     const {editing} = this.state;
     this.setState({editing: !editing ? name : null});
-  }
-  handleEdit(name, text) {
-    const {profile} = this.props;
-    profile[name] = text;
-    this.setState({profile});
-  }
-  renderEdit(name) {
+  };
+  handleEdit = (name, text) => {
+    const {users} = this.props;
+    users[name] = text;
+    this.setState({users});
+  };
+  renderEdit = name => {
     const {editing} = this.state;
-    const {profile, user} = this.props;
+    const {users} = this.props;
     if (editing === name) {
       return (
         <TextInput
-          defaultValue={user.username}
+          defaultValue={users.username}
           onChangeText={text => this.handleEdit([name], text)}
         />
       );
     }
-  }
+  };
   render() {
     const {editing} = this.state;
-    const {profile, user} = this.props;
-    //console.log('profile',user);
+    const {users} = this.props;
+    console.log('profile', users);
     return (
       <Block>
         <Block flex={false} row center space="between" style={s.header}>
@@ -104,7 +97,7 @@ class Settings extends Component {
                 <TextView gray2 style={{marginBottom: 10}}>
                   E-mail
                 </TextView>
-                <TextView bold>{user.email}</TextView>
+                <TextView bold>{users.email}</TextView>
               </Block>
             </Block>
           </Block>
@@ -179,15 +172,15 @@ class Settings extends Component {
     );
   }
 }
-const mapStatetoProps = state => {
+const mapStatetoProps = ({users}) => {
   return {
-    user: state.user,
+    users: users.profileUser,
   };
 };
-const mapDispathToProp = (dispath, props) => {
+const mapDispathToProp = dispatch => {
   return {
-    getUser: user => {
-      dispath(fetchUser(user));
+    getUser: () => {
+      dispatch(fetchUser());
     },
   };
 };
