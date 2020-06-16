@@ -7,9 +7,7 @@ import {
 
 import {movies} from '../constants/apis';
 
-//action types
-export const FETCH_CHANNEL = 'FETCH_CHANNEL';
-
+//action handle loading
 const isLoading = isLoading => ({
   type: LOADING,
   isLoading,

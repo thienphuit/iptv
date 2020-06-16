@@ -35,6 +35,11 @@ const styles = StyleSheet.create({
     maxWidth: (width - theme.sizes.padding * 2.4 - theme.sizes.base) / 2,
     maxHeight: (width - theme.sizes.padding * 2.4 - theme.sizes.base) / 2,
   },
+  images: {
+    minWidth: (width - theme.sizes.padding * 3 - theme.sizes.base) / 2,
+    maxWidth: (width - theme.sizes.padding * 3 - theme.sizes.base) / 2,
+    maxHeight: (width - theme.sizes.padding * 3 - theme.sizes.base) / 2,
+  },
   scollView: {
     paddingVertical: theme.sizes.base * 2,
   },

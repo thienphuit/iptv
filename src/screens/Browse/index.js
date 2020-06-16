@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import {Block, TextView, Button, Card, Badge} from '../../components';
-import s from './styles';
+import styles from './styles';
 import {Image, TouchableOpacity, ScrollView} from 'react-native';
 import {mocks} from '../../constants';
 import {fetchMovies} from '../../actions/channelAction';
+import {fetchTheMovieDb} from '../../actions/themoviedbAction';
 import {connect} from 'react-redux';
 
 class Browse extends Component {
@@ -17,6 +18,8 @@ class Browse extends Component {
   }
   componentDidMount() {
     this.props.fetchMovies();
+    this.props.fetchTheMovieDb();
+    console.log('data2');
     this.setState({categories: this.props.categories});
   }
 
@@ -34,7 +37,7 @@ class Browse extends Component {
       <TouchableOpacity
         key={`tab-${tab}`}
         onPress={() => this.handleTab(tab)}
-        style={[s.tab, isActive ? s.active : null]}>
+        style={[styles.tab, isActive ? styles.active : null]}>
         <TextView size={16} medium gray={!isActive} secondary={isActive}>
           {tab}
         </TextView>
@@ -43,37 +46,43 @@ class Browse extends Component {
   };
 
   render() {
-    const {profile, navigation, channels} = this.props;
-    const {categories} = this.state;
+    const {profile, navigation, channels, themovies} = this.props;
     const tabs = ['Product', 'Inspirations', 'Shop'];
-    //console.log('aaaaaa', channels);
+    const domainImage = 'https://image.tmdb.org/t/p/w600_and_h900_bestv2';
     return (
       <Block>
-        <Block flex={false} row center space="between" style={s.header}>
+        <Block flex={false} row center space="between" style={styles.header}>
           <TextView h1 bold>
             Browse
           </TextView>
           <Button onPress={() => navigation.navigate('Settings')}>
-            <Image source={profile.avatar} style={s.avatar} />
+            <Image source={profile.avatar} style={styles.avatar} />
           </Button>
         </Block>
-        <Block flex={false} row style={s.tabs}>
+        <Block flex={false} row style={styles.tabs}>
           {tabs.map(tab => this.renderTab(tab))}
         </Block>
-        <ScrollView showsHorizontalScrollIndicator={false} style={s.scollView}>
-          <Block flex={false} row space="between" style={s.categories}>
-            {channels.map(category => (
+        <ScrollView
+          showsHorizontalScrollIndicator={false}
+          style={styles.scollView}>
+          <Block flex={false} row space="between" style={styles.categories}>
+            {themovies.map(category => (
               // TODO: link to others page
               // navigation.navigate('Explore',{category})}
               <TouchableOpacity
                 key={category.id}
                 onPress={() => navigation.navigate('VideoView', {category})}>
-                <Card center middle shadow style={s.category}>
+                <Card center middle shadow style={styles.category}>
                   <Badge
                     margin={[0, 0, 15]}
                     size={50}
                     color="rgba(41,216,143,0.20">
-                    <Image source={category.image} />
+                    <Image
+                      style={{width: 50, height: 50}}
+                      source={{
+                        uri: domainImage + category.backdrop_path,
+                      }}
+                    />
                   </Badge>
                   <TextView medium height={20}>
                     {category.name}
@@ -91,14 +100,18 @@ class Browse extends Component {
   }
 }
 
-const mapStateToProps = ({channels}) => {
+const mapStateToProps = ({channels, themovies}) => {
   return {
     channels: channels.link,
+    themovies: themovies.themovies,
   };
 };
 
-const mapDispatchToProps = {
-  fetchMovies,
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchMovies: () => dispatch(fetchMovies()),
+    fetchTheMovieDb: () => dispatch(fetchTheMovieDb()),
+  };
 };
 
 Browse.defaultProps = {

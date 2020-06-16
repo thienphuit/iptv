@@ -31,6 +31,10 @@ const styles = StyleSheet.create({
   toggles: {
     paddingHorizontal: theme.sizes.base * 2,
   },
+  slider: {
+    height: 6,
+    borderRadius: 6,
+  },
 });
 
 export default styles;

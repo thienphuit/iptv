@@ -26,7 +26,6 @@ class Welcome extends Component {
           padding={[theme.sizes.padding * 2, theme.sizes.padding]}
           space="between">
           <TextView h2 light>
-            {' '}
             Term of Service
           </TextView>
           <ScrollView style={{marginVertical: theme.sizes.padding}}>

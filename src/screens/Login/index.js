@@ -6,11 +6,11 @@ import {
   Alert,
 } from 'react-native';
 import {Block, TextView, Input, Button} from '../../components';
-import s from './styles';
+import styles from './styles';
 import {theme} from '../../constants';
 
 const VALID_EMAIL = 'thienphu';
-const VALID_PASSWORD = '123456';
+const VALID_PASSWORD = 'e10adc3949ba59abbe56e057f20f883e';
 
 const Login = ({navigation}) => {
   const [isLoading, setLoading] = useState(false);
@@ -54,10 +54,10 @@ const Login = ({navigation}) => {
     }
   };
   //const {loading, errors} = this.state;
-  const hasErrors = key => (errors.includes(key) ? s.hastErrors : null);
+  const hasErrors = key => (errors.includes(key) ? styles.hastErrors : null);
   // const {navigation} = props;
   return (
-    <KeyboardAvoidingView style={s.login} behavior="padding">
+    <KeyboardAvoidingView style={styles.login} behavior="padding">
       <Block padding={[0, theme.sizes.base * 2]}>
         <TextView h1 bold>
           Login
@@ -66,7 +66,7 @@ const Login = ({navigation}) => {
           <Input
             label="Email"
             error={hasErrors('email')}
-            style={[s.input, hasErrors('email')]}
+            style={[styles.input, hasErrors('email')]}
             defaultValue={email}
             onChangeText={text => setEmail(text)}
           />
@@ -74,7 +74,7 @@ const Login = ({navigation}) => {
             secure
             label="Password"
             error={hasErrors('password')}
-            style={[s.input, hasErrors('password')]}
+            style={[styles.input, hasErrors('password')]}
             defaultValue={password}
             onChangeText={text => setPassword(text)}
           />
@@ -89,7 +89,7 @@ const Login = ({navigation}) => {
           </Button>
 
           <Button onPress={() => navigation.navigate('Forgot')}>
-            <TextView gray center caption style={s.textDecoration}>
+            <TextView gray center caption style={styles.textDecoration}>
               Forgot your password
             </TextView>
           </Button>

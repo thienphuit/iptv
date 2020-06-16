@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Block, TextView, Button, Divider} from '../../components';
-import s from './styles';
+import styles from './styles';
 import {Image, ScrollView, TextInput, Switch} from 'react-native';
 import Slider from '@react-native-community/slider';
 import {theme, mocks} from '../../constants';
@@ -21,9 +21,9 @@ class Settings extends Component {
     };
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
     this.props.getUser();
-  }
+  };
   toggleEdit = name => {
     const {editing} = this.state;
     this.setState({editing: !editing ? name : null});
@@ -48,23 +48,20 @@ class Settings extends Component {
   render() {
     const {editing} = this.state;
     const {users} = this.props;
-    console.log('profile', users);
+    const linkImage = require('../../assets/images/avatar.png');
     return (
       <Block>
-        <Block flex={false} row center space="between" style={s.header}>
+        <Block flex={false} row center space="between" style={styles.header}>
           <TextView h1 bold>
             Setttings
           </TextView>
           <Button>
-            <Image
-              source={require('../../assets/images/avatar.png')}
-              style={s.avatar}
-            />
+            <Image source={linkImage} style={styles.avatar} />
           </Button>
         </Block>
         <ScrollView showsVerticalScrollIndicator={false}>
-          <Block style={s.inputs}>
-            <Block row space="between" margin={[10, 0]} style={s.inputRow}>
+          <Block style={styles.inputs}>
+            <Block row space="between" margin={[10, 0]} style={styles.inputRow}>
               <Block>
                 <TextView gray2 style={{marginBottom: 10}}>
                   UserName
@@ -78,7 +75,7 @@ class Settings extends Component {
                 {editing === 'username' ? 'Save' : 'Edit'}
               </TextView>
             </Block>
-            <Block row space="between" margin={[10, 0]} style={s.inputRow}>
+            <Block row space="between" margin={[10, 0]} style={styles.inputRow}>
               <Block>
                 <TextView gray2 style={{marginBottom: 10}}>
                   Location
@@ -92,7 +89,7 @@ class Settings extends Component {
                 {editing === 'location' ? 'Save' : 'Edit'}
               </TextView>
             </Block>
-            <Block row space="between" margin={[10, 0]} style={s.inputRow}>
+            <Block row space="between" margin={[10, 0]} style={styles.inputRow}>
               <Block>
                 <TextView gray2 style={{marginBottom: 10}}>
                   E-mail
@@ -102,7 +99,7 @@ class Settings extends Component {
             </Block>
           </Block>
           <Divider margin={[theme.sizes.base, theme.sizes.base * 2]} />
-          <Block style={s.sliders}>
+          <Block style={styles.sliders}>
             <Block margin={[10, 0]}>
               <TextView gray2 style={{marginBottom: 10}}>
                 Budget
@@ -111,8 +108,8 @@ class Settings extends Component {
                 minimunValue={0}
                 maximunValue={1000}
                 style={{height: 19}}
-                thumsStyle={s.thumb}
-                trackStyle={{height: 6, borderRadius: 6}}
+                thumsStyle={styles.thumb}
+                trackStyle={styles.slider}
                 minimumTrackTintColor={theme.colors.secondary}
                 maximumTrackTintColor="rgba(157, 163, 180, 0.10)"
                 value={this.state.budget}
@@ -130,8 +127,8 @@ class Settings extends Component {
                 minimunValue={0}
                 maximunValue={1000}
                 style={{height: 19}}
-                thumsStyle={s.thumb}
-                trackStyle={{height: 6, borderRadius: 6}}
+                thumsStyle={styles.thumb}
+                trackStyle={styles.slider}
                 minimumTrackTintColor={theme.colors.secondary}
                 maximumTrackTintColor="rgba(157, 163, 180, 0.10)"
                 value={this.state.budget}
@@ -143,7 +140,7 @@ class Settings extends Component {
             </Block>
           </Block>
           <Divider />
-          <Block style={s.toggles}>
+          <Block style={styles.toggles}>
             <Block
               row
               center

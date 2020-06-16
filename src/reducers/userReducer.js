@@ -19,7 +19,6 @@ const users = (state = initUser, action) => {
       };
     case GET_USER_SUCCESS:
       const {response} = action;
-      //console.log('object', response);
       return {
         ...state,
         profileUser: response,

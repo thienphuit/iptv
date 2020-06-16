@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Block, Button, TextView, Input} from '../../components';
-import s from './styles';
+import styles from './styles';
 import {Dimensions, Image, ScrollView, TouchableOpacity} from 'react-native';
 import {theme, mocks} from '../../constants';
 import FontAweSome from 'react-native-vector-icons/FontAwesome';
@@ -14,21 +14,21 @@ class Explore extends Component {
     searchFocus: new Animated.Value(0.6),
     searchString: null,
   };
-  handleSearchFocus(status) {
+  handleSearchFocus = status => {
     Animated.timing(this.state.searchFocus, {
       toValue: status ? 0.8 : 0.6,
       duration: 150,
     }).start();
-  }
-  renderSearch() {
+  };
+  renderSearch = () => {
     const {searchFocus, searchString} = this.state;
     const isEditing = searchFocus && searchString;
     return (
-      <Block middle animated flex={searchFocus} style={s.search}>
+      <Block middle animated flex={searchFocus} style={styles.search}>
         <Input
           placeholder="Search"
           placeholderTextColor={theme.colors.gray2}
-          style={s.searchInput}
+          style={styles.searchInput}
           onFocus={() => this.handleSearchFocus(true)}
           onBlur={() => this.handleSearchFocus(false)}
           onChangeText={text => this.setState({searchString: text})}
@@ -36,20 +36,20 @@ class Explore extends Component {
           onRightPress={() =>
             isEditing ? this.setState({searchString: null}) : null
           }
-          rightStyle={s.searchRight}
+          rightStyle={styles.searchRight}
           rightLabel={
             <FontAweSome
               name={isEditing ? 'close' : 'search'}
               size={theme.sizes.base / 1.6}
               color={theme.colors.gray2}
-              style={s.searchIcon}
+              style={styles.searchIcon}
             />
           }
         />
       </Block>
     );
-  }
-  renderImage(img, index) {
+  };
+  renderImage = (img, index) => {
     const {navigation} = this.props;
     const sizes = Image.resolveAssetSource(img);
     const fullWidth = width - theme.sizes.padding * 2.5;
@@ -61,11 +61,11 @@ class Explore extends Component {
         onPress={() => navigation.navigate('Product')}>
         <Image
           source={img}
-          style={[s.image, {minWidth: imgWidth, maxWidth: imgWidth}]}
+          style={[styles.image, {minWidth: imgWidth, maxWidth: imgWidth}]}
         />
       </TouchableOpacity>
     );
-  }
+  };
   renderExplore = () => {
     const {images} = this.props;
     const mainImage = images[0];
@@ -73,10 +73,10 @@ class Explore extends Component {
     return (
       <Block style={{marginBottom: height / 3}}>
         <TouchableOpacity
-          style={[s.image, s.mainImage]}
+          style={[styles.image, styles.mainImage]}
           //onPress={() => navigation.navigate('Product')}
         >
-          <Image source={mainImage} style={[s.image, s.mainImage]} />
+          <Image source={mainImage} style={[styles.image, styles.mainImage]} />
         </TouchableOpacity>
         <Block row space="between" wrap>
           {images.slice(1).map((img, index) => this.renderImage(img, index))}
@@ -88,7 +88,7 @@ class Explore extends Component {
     return (
       <LinerGradient
         locations={[0.5, 1]}
-        style={s.footer}
+        style={styles.footer}
         colors={['rgba(255,255,255,0)', 'rgba(255,255,255,0.6)']}>
         <Button gradient style={{width: width / 2.678}}>
           <TextView center white bold>
@@ -101,13 +101,13 @@ class Explore extends Component {
   render() {
     return (
       <Block>
-        <Block flex={false} row center space="between" style={s.header}>
+        <Block flex={false} row center space="between" style={styles.header}>
           <TextView h1 bold>
             Explore
           </TextView>
           {this.renderSearch()}
         </Block>
-        <ScrollView showsVerticalScrollIndicator={false} style={s.explore}>
+        <ScrollView showsVerticalScrollIndicator={false} style={styles.explore}>
           {this.renderExplore()}
         </ScrollView>
         {this.renderFooter()}

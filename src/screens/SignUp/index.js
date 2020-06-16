@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Button, TextView, Block, Input} from '../../components';
 import {theme} from '../../constants';
-import s from './styles';
+import styles from './styles';
 import {
   ActivityIndicator,
   Keyboard,
@@ -49,10 +49,10 @@ export default class SignUp extends Component {
   };
   render() {
     const {loading, errors} = this.state;
-    const hasErrors = key => (errors.includes(key) ? s.hastErrors : null);
+    const hasErrors = key => (errors.includes(key) ? styles.hastErrors : null);
     const {navigation} = this.props;
     return (
-      <KeyboardAvoidingView style={s.signup} behavior="padding">
+      <KeyboardAvoidingView style={styles.signup} behavior="padding">
         <Block padding={[0, theme.sizes.base * 2]}>
           <TextView h1 bold>
             Sign Up
@@ -61,14 +61,14 @@ export default class SignUp extends Component {
             <Input
               label="Email"
               error={hasErrors('email')}
-              style={s.input}
+              style={styles.input}
               defaultValue={this.state.email}
               onChangeText={text => this.setState({email: text})}
             />
             <Input
               label="Username"
               error={hasErrors('username')}
-              style={[s.input, hasErrors('username')]}
+              style={[styles.input, hasErrors('username')]}
               defaultValue={this.state.username}
               onChangeText={text => this.setState({username: text})}
             />
@@ -76,7 +76,7 @@ export default class SignUp extends Component {
               secure
               label="PassWord"
               error={hasErrors('password')}
-              style={s.input}
+              style={styles.input}
               defaultValue={this.state.password}
             />
             <Button gradient onPress={() => this.handleSignUp()}>
@@ -90,7 +90,7 @@ export default class SignUp extends Component {
             </Button>
 
             <Button onPress={() => navigation.navigate('Login')}>
-              <TextView gray caption center style={s.textDeco}>
+              <TextView gray caption center style={styles.textDeco}>
                 Back to Login
               </TextView>
             </Button>
