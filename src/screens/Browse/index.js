@@ -48,6 +48,7 @@ class Browse extends Component {
     const {profile, navigation, channels, themovies} = this.props;
     const tabs = ['Product', 'Inspirations', 'Shop'];
     const domainImage = 'https://image.tmdb.org/t/p/w600_and_h900_bestv2';
+    const channelJson = require('../../assets/channels/channel.json');
     return (
       <Block>
         <Block flex={false} row center space="between" style={styles.header}>
@@ -65,7 +66,7 @@ class Browse extends Component {
           showsHorizontalScrollIndicator={false}
           style={styles.scollView}>
           <Block flex={false} row space="between" style={styles.categories}>
-            {themovies.map(category => (
+            {channelJson.data.map(category => (
               // TODO: link to others page
               // navigation.navigate('Explore',{category})}
               <TouchableOpacity
@@ -84,11 +85,11 @@ class Browse extends Component {
                     />
                   </Badge>
                   <TextView medium height={20}>
-                    {category.name}
+                    {category.CHANNEL_NAME}
                   </TextView>
-                  <TextView gray caption>
+                  {/* <TextView gray caption>
                     {category.title}
-                  </TextView>
+                  </TextView> */}
                 </Card>
               </TouchableOpacity>
             ))}
