@@ -1,4 +1,3 @@
-//import {FETCH_CHANNEL} from '../actions/channelAction';
 import {
   GET_MOVIES,
   GET_MOVIES_ERROR,
@@ -13,13 +12,11 @@ const initState = {
 const channels = (state = initState, action) => {
   switch (action.type) {
     case GET_MOVIES:
-      // console.log('get movie', action);
       return {
         ...state,
         loading: true,
       };
     case GET_MOVIES_SUCCESS:
-      //console.log('reducer', action);
       const {response} = action;
       return {
         ...state,

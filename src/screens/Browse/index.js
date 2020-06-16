@@ -19,7 +19,6 @@ class Browse extends Component {
   componentDidMount() {
     this.props.fetchMovies();
     this.props.fetchTheMovieDb();
-    console.log('data2');
     this.setState({categories: this.props.categories});
   }
 

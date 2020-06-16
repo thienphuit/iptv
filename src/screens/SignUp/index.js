@@ -17,7 +17,6 @@ export default class SignUp extends Component {
     username: null,
   };
   handleSignUp = () => {
-    console.log('SignUp');
     const {navigation} = this.props;
     const {email, username, password} = this.state;
     const errors = [];
