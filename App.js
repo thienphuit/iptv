@@ -13,6 +13,7 @@ import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import thunk from 'redux-thunk';
 import appReducers from './src/reducers/index';
+import BottomTab from './src/screens/BottomTab';
 
 const store = createStore(appReducers, applyMiddleware(thunk));
 const App = () => {

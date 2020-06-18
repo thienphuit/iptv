@@ -47,7 +47,7 @@ const Login = ({navigation}) => {
         {
           text: 'Ok',
           onPress: () => {
-            navigation.navigate('Browse');
+            //navigation.navigate('Browse');
           },
         },
       ]);

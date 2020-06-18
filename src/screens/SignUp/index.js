@@ -38,7 +38,7 @@ export default class SignUp extends Component {
           {
             text: 'Countinue',
             onPress: () => {
-              navigation.navigate('Browse');
+              //navigation.navigate('Browse');
             },
           },
         ],

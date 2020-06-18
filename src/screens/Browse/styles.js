@@ -31,9 +31,11 @@ const styles = StyleSheet.create({
     marginBottom: theme.sizes.base * 3.5,
   },
   category: {
-    minWidth: (width - theme.sizes.padding * 2.4 - theme.sizes.base) / 2,
-    maxWidth: (width - theme.sizes.padding * 2.4 - theme.sizes.base) / 2,
-    maxHeight: (width - theme.sizes.padding * 2.4 - theme.sizes.base) / 2,
+    minWidth: (width - theme.sizes.padding * 2.4 - theme.sizes.base) / 3,
+    maxWidth: (width - theme.sizes.padding * 2.4 - theme.sizes.base) / 3,
+    maxHeight: (width - theme.sizes.padding * 2.4 - theme.sizes.base) / 3,
+    paddingLeft: 0,
+    paddingRight: 0,
   },
   images: {
     minWidth: (width - theme.sizes.padding * 3 - theme.sizes.base) / 2,

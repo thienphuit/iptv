@@ -7,27 +7,30 @@ import {fetchMovies} from '../../actions/channelAction';
 import {fetchTheMovieDb} from '../../actions/themoviedbAction';
 import {connect} from 'react-redux';
 
+const channelJson = require('../../assets/channels/channel.json');
+
 class Browse extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      active: 'Product',
+      active: 'Channel',
       categories: [],
       channels: [],
+      channelJson: [],
     };
   }
   componentDidMount() {
     this.props.fetchMovies();
     this.props.fetchTheMovieDb();
-    this.setState({categories: this.props.categories});
   }
 
   handleTab = tab => {
-    const {categories} = this.props;
-    const filtered = categories.filter(category =>
-      category.tags.includes(tab.toLowerCase()),
-    );
-    this.setState({active: tab, categories: filtered});
+    const filtered =
+      channelJson &&
+      channelJson.data.filter(category =>
+        category.channel_tags.includes(tab.toLowerCase()),
+      );
+    this.setState({active: tab, channelJson: filtered});
   };
   renderTab = tab => {
     const {active} = this.state;
@@ -46,9 +49,9 @@ class Browse extends Component {
 
   render() {
     const {profile, navigation, channels, themovies} = this.props;
-    const tabs = ['Product', 'Inspirations', 'Shop'];
+    const tabs = ['Channel', 'Vod', 'VodNew'];
+    const {channelJson} = this.state;
     const domainImage = 'https://image.tmdb.org/t/p/w600_and_h900_bestv2';
-    const channelJson = require('../../assets/channels/channel.json');
     return (
       <Block>
         <Block flex={false} row center space="between" style={styles.header}>
@@ -66,14 +69,14 @@ class Browse extends Component {
           showsHorizontalScrollIndicator={false}
           style={styles.scollView}>
           <Block flex={false} row space="between" style={styles.categories}>
-            {channelJson.data.map(category => (
+            {channelJson.map(category => (
               // TODO: link to others page
               // navigation.navigate('Explore',{category})}
               <TouchableOpacity
-                key={category.id}
+                key={category.channel_number}
                 onPress={() => navigation.navigate('VideoView', {category})}>
                 <Card center middle shadow style={styles.category}>
-                  <Badge
+                  {/* <Badge
                     margin={[0, 0, 15]}
                     size={50}
                     color="rgba(41,216,143,0.20">
@@ -83,9 +86,9 @@ class Browse extends Component {
                         uri: domainImage + category.backdrop_path,
                       }}
                     />
-                  </Badge>
-                  <TextView medium height={20}>
-                    {category.CHANNEL_NAME}
+                  </Badge> */}
+                  <TextView primary center>
+                    {category.channel_name}
                   </TextView>
                   {/* <TextView gray caption>
                     {category.title}

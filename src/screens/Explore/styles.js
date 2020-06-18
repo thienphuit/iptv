@@ -6,6 +6,7 @@ const styles = StyleSheet.create({
   header: {
     paddingHorizontal: theme.sizes.base * 2,
     paddingBottom: theme.sizes.base * 2,
+    paddingTop: theme.sizes.base,
   },
   search: {
     height: theme.sizes.base * 2,
@@ -13,7 +14,7 @@ const styles = StyleSheet.create({
   },
   searchInput: {
     fontSize: theme.sizes.caption,
-    height: theme.sizes.base * 2,
+    height: theme.sizes.base * 2.2,
     backgroundColor: 'rgba(142, 142, 147, 0.06)',
     borderColor: 'rgba(142, 142, 147, 0.06)',
     paddingLeft: theme.sizes.base / 1.333,
