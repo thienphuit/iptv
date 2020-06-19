@@ -2,7 +2,7 @@ import React from 'react';
 import {Block, TextView, Button} from '../../components';
 import styles from './styles';
 
-const Information = () => {
+const Information = ({navigation}) => {
   return (
     <Block style={styles.container}>
       <Block center middle style={styles.header}>
@@ -16,7 +16,7 @@ const Information = () => {
           App play channel free, always update new movies hot,Bring a cool
           experience.
         </TextView>
-        <Button onPress={() => {}}>
+        <Button onPress={() => navigation.navigate('Admin')}>
           <TextView gray right caption style={styles.textDecoration}>
             Link addmin
           </TextView>

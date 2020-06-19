@@ -15,6 +15,7 @@ import Explore from '../screens/Explore';
 import VideoView from '../screens/VideoView';
 import BottomTab from '../screens/BottomTab';
 import Information from '../screens/Information';
+import Admin from '../screens/Admin';
 
 const Stack = createStackNavigator();
 const Tabs = createBottomTabNavigator();
@@ -40,6 +41,7 @@ const ExploreStackScreen = () => (
 const AddminStackScreen = () => (
   <AddminStack.Navigator>
     <AddminStack.Screen name="Information" component={Information} />
+    <AddminStack.Screen name="Admin" component={Admin} />
   </AddminStack.Navigator>
 );
 

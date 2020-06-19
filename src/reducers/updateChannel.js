@@ -1,15 +1,30 @@
-import {UPDATE_CHANNEL} from '../constants/ActionTypes/updateChannel';
+import {
+  UPDATE_CHANNEL,
+  GET_DATA_FROM_FILE,
+} from '../constants/ActionTypes/updateChannel';
 
-const initState = {
-  channel: {},
+var channelJson = require('../assets/channels/channel.json');
+const initData = {
+  channels: channelJson,
 };
 
-const updateChannel = (state = initState, action) => {
+const updateChannel = (state = initData, action) => {
   switch (action.type) {
-    case UPDATE_CHANNEL:
-      console.log(action);
+    case GET_DATA_FROM_FILE:
       return {
         ...state,
+        channelJson,
+      };
+
+    case UPDATE_CHANNEL:
+      const {newChannel} = action;
+      const channels = state.channels;
+      channels[newChannel.channel_number] = newChannel;
+      console.log('tql reducer ', channels);
+
+      return {
+        ...state,
+        channels,
       };
     default:
       return state;

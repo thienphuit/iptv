@@ -5,5 +5,6 @@ import Input from './Input';
 import Card from './Card';
 import Badge from './Badge';
 import Divider from './Divider';
+import MyModal from './MyModal';
 
-export {Block, Button, TextView, Input, Card, Badge, Divider};
+export {Block, Button, TextView, Input, Card, Badge, Divider, MyModal};

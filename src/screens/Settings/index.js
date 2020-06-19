@@ -4,7 +4,6 @@ import styles from './styles';
 import {Image, ScrollView, TextInput, Switch} from 'react-native';
 import Slider from '@react-native-community/slider';
 import {theme, mocks} from '../../constants';
-//import userProfile from '../../utils/apiUser';
 import {connect} from 'react-redux';
 import {fetchUser} from '../../actions/userAction';
 class Settings extends Component {

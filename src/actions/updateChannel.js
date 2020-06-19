@@ -1,26 +1,19 @@
 import {
   UPDATE_CHANNEL,
-  UPDATE_CHANNEL_SUCCESS,
-  UPDATE_CHANNEL_FAIL,
+  GET_DATA_FROM_FILE,
+  SAVE_FILE,
 } from '../constants/ActionTypes/updateChannel';
 
-const updateChannel = () => ({
+export const updateChannelLocal = newChannel => ({
   type: UPDATE_CHANNEL,
+  newChannel,
 });
 
-/* const updateChannelSuccess = response => ({
-  type: UPDATE_CHANNEL_SUCCESS,
-  response,
+export const getDataFromFile = () => ({
+  type: GET_DATA_FROM_FILE,
 });
 
-const updateChannelFail = errors => ({
-  type: UPDATE_CHANNEL_FAIL,
-  errors,
-}); */
-
-const channelJson = require('../assets/channels/channel.json');
-
-export const updateChannelLocal = id => ({
-  type: UPDATE_CHANNEL,
-  id,
+export const saveFile = channels => ({
+  type: SAVE_FILE,
+  channels,
 });

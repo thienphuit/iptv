@@ -1,58 +1,57 @@
-{
-    "data": [
+
+    [
       {
-        "channel_number": "1",
-        "channel_name": "DISNEY CHANNEL",
-        "channel_tags": ["channel","vod"],
-        "channel_url": "http://live.cdn.mobifonetv.vn/motv/myhtv1_hls.smil/chunklist_b1200000.m3u8"
+        "number": "1",
+        "name": "DISNEY CHANNEL",
+        "tags": ["channel","vod"],
+        "url": "http://live.cdn.mobifonetv.vn/motv/myhtv1_hls.smil/chunklist_b1200000.m3u8"
       },
       {
-        "channel_number": "2",
-        "channel_name": "DISNEY CHANNEL",
-        "channel_tags": ["channel","vod"],
-        "channel_url": "http://live.cdn.mobifonetv.vn/motv/myhtv1_hls.smil/chunklist_b1200000.m3u8"
+        "number": "2",
+        "name": "DISNEY CHANNEL",
+        "tags": ["channel","vod"],
+        "url": "http://live.cdn.mobifonetv.vn/motv/myhtv1_hls.smil/chunklist_b1200000.m3u8"
       },
       {
-        "channel_number": "3",
-        "channel_name": "HTV1",
-        "channel_tags": ["channel","vod"],
-        "channel_url": "http://live.cdn.mobifonetv.vn/motv/myhtv1_hls.smil/chunklist_b1200000.m3u8"
+        "number": "3",
+        "name": "HTV1",
+        "tags": ["channel","vod"],
+        "url": "http://live.cdn.mobifonetv.vn/motv/myhtv1_hls.smil/chunklist_b1200000.m3u8"
       },
       {
-        "channel_number": "4",
-        "channel_name": "DISCOVERY",
-        "channel_tags": ["channel","vod"],
-        "channel_url": "http://live.cdn.mobifonetv.vn/motv/myhtv1_hls.smil/chunklist_b1200000.m3u8"
+        "number": "4",
+        "name": "DISCOVERY",
+        "tags": ["channel","vod"],
+        "url": "http://live.cdn.mobifonetv.vn/motv/myhtv1_hls.smil/chunklist_b1200000.m3u8"
       },
       {
-        "channel_number": "5",
-        "channel_name": "FASHION TV",
-        "channel_tags": ["channel","vod"],
-        "channel_url": "http://live.cdn.mobifonetv.vn/motv/myhtv1_hls.smil/chunklist_b1200000.m3u8"
+        "number": "5",
+        "name": "FASHION TV",
+        "tags": ["channel","vod"],
+        "url": "http://live.cdn.mobifonetv.vn/motv/myhtv1_hls.smil/chunklist_b1200000.m3u8"
       },
       {
-        "channel_number": "6",
-        "channel_name": "YTN HÀN QUỐC",
-        "channel_tags": ["channel","vod"],
-        "channel_url": "http://live.cdn.mobifonetv.vn/motv/myhtv1_hls.smil/chunklist_b1200000.m3u8"
+        "number": "6",
+        "name": "YTN HÀN QUỐC",
+        "tags": ["channel","vod"],
+        "url": "http://live.cdn.mobifonetv.vn/motv/myhtv1_hls.smil/chunklist_b1200000.m3u8"
       },
       {
-        "channel_number": "7",
-        "channel_name": "RTPI ASIA",
-        "channel_tags": ["vodnew","vod"],
-        "channel_url": "http://live.cdn.mobifonetv.vn/motv/myhtv1_hls.smil/chunklist_b1200000.m3u8"
+        "number": "7",
+        "name": "RTPI ASIA",
+        "tags": ["vodnew","vod"],
+        "url": "http://live.cdn.mobifonetv.vn/motv/myhtv1_hls.smil/chunklist_b1200000.m3u8"
       },
       {
-        "channel_number": "9",
-        "channel_name": "TVE",
-        "channel_tags": ["vod","vodnew"],
-        "channel_url": "http://live.cdn.mobifonetv.vn/motv/myhtv1_hls.smil/chunklist_b1200000.m3u8"
+        "number": "9",
+        "name": "TVE",
+        "tags": ["vod","vodnew"],
+        "url": "http://live.cdn.mobifonetv.vn/motv/myhtv1_hls.smil/chunklist_b1200000.m3u8"
       },
       {
-        "channel_number": "10",
-        "channel_name": "VTV3",
-        "channel_tags": ["channel","vod"],
-        "channel_url": "http://live.cdn.mobifonetv.vn/motv/myhtv1_hls.smil/chunklist_b1200000.m3u8"
+        "number": "10",
+        "name": "VTV3",
+        "tags": ["channel","vod"],
+        "url": "http://live.cdn.mobifonetv.vn/motv/myhtv1_hls.smil/chunklist_b1200000.m3u8"
       }
     ]
-}

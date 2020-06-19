@@ -27,9 +27,7 @@ class Browse extends Component {
   handleTab = tab => {
     const filtered =
       channelJson &&
-      channelJson.data.filter(category =>
-        category.channel_tags.includes(tab.toLowerCase()),
-      );
+      channelJson.filter(category => category.tags.includes(tab.toLowerCase()));
     this.setState({active: tab, channelJson: filtered});
   };
   renderTab = tab => {
@@ -51,7 +49,6 @@ class Browse extends Component {
     const {profile, navigation, channels, themovies} = this.props;
     const tabs = ['Channel', 'Vod', 'VodNew'];
     const {channelJson} = this.state;
-    const domainImage = 'https://image.tmdb.org/t/p/w600_and_h900_bestv2';
     return (
       <Block>
         <Block flex={false} row center space="between" style={styles.header}>
@@ -73,7 +70,7 @@ class Browse extends Component {
               // TODO: link to others page
               // navigation.navigate('Explore',{category})}
               <TouchableOpacity
-                key={category.channel_number}
+                key={category.number}
                 onPress={() => navigation.navigate('VideoView', {category})}>
                 <Card center middle shadow style={styles.category}>
                   {/* <Badge
@@ -88,7 +85,7 @@ class Browse extends Component {
                     />
                   </Badge> */}
                   <TextView primary center>
-                    {category.channel_name}
+                    {category.name}
                   </TextView>
                   {/* <TextView gray caption>
                     {category.title}
