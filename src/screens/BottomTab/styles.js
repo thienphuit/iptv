@@ -11,5 +11,9 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     paddingBottom: 30,
   },
+  title: {
+    textAlign: 'center',
+    marginTop: 300,
+  },
 });
 export default styles;

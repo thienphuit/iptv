@@ -20,7 +20,6 @@ const updateChannel = (state = initData, action) => {
       const {newChannel} = action;
       const channels = state.channels;
       channels[newChannel.channel_number] = newChannel;
-      console.log('tql reducer ', channels);
 
       return {
         ...state,

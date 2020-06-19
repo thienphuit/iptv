@@ -14,6 +14,7 @@ class Admin extends Component {
       currentChannel: {
         name: '',
         url: '',
+        description: '',
         tags: [],
       },
     };

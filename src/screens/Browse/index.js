@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Block, TextView, Button, Card, Badge} from '../../components';
+import {Block, TextView, Button, Card} from '../../components';
 import styles from './styles';
 import {Image, TouchableOpacity, ScrollView} from 'react-native';
 import {mocks} from '../../constants';
@@ -46,7 +46,7 @@ class Browse extends Component {
   };
 
   render() {
-    const {profile, navigation, channels, themovies} = this.props;
+    const {profile, navigation} = this.props;
     const tabs = ['Channel', 'Vod', 'VodNew'];
     const {channelJson} = this.state;
     return (
@@ -87,9 +87,6 @@ class Browse extends Component {
                   <TextView primary center>
                     {category.name}
                   </TextView>
-                  {/* <TextView gray caption>
-                    {category.title}
-                  </TextView> */}
                 </Card>
               </TouchableOpacity>
             ))}

@@ -4,54 +4,72 @@
         "number": "1",
         "name": "DISNEY CHANNEL",
         "tags": ["channel","vod"],
+        "description": "Show firm cartoon and amime kit",
+        "url_image": "link image",
         "url": "http://live.cdn.mobifonetv.vn/motv/myhtv1_hls.smil/chunklist_b1200000.m3u8"
       },
       {
         "number": "2",
         "name": "DISNEY CHANNEL",
         "tags": ["channel","vod"],
+        "description": "Show firm cartoon and amime kit",
+        "url_image": "link image",
         "url": "http://live.cdn.mobifonetv.vn/motv/myhtv1_hls.smil/chunklist_b1200000.m3u8"
       },
       {
         "number": "3",
         "name": "HTV1",
         "tags": ["channel","vod"],
+        "description": "Show firm cartoon and amime kit",
+        "url_image": "link image",
         "url": "http://live.cdn.mobifonetv.vn/motv/myhtv1_hls.smil/chunklist_b1200000.m3u8"
       },
       {
         "number": "4",
         "name": "DISCOVERY",
         "tags": ["channel","vod"],
+        "description": "Show firm cartoon and amime kit",
+        "url_image": "link image",
         "url": "http://live.cdn.mobifonetv.vn/motv/myhtv1_hls.smil/chunklist_b1200000.m3u8"
       },
       {
         "number": "5",
         "name": "FASHION TV",
         "tags": ["channel","vod"],
+        "description": "Show firm cartoon and amime kit",
+        "url_image": "link image",
         "url": "http://live.cdn.mobifonetv.vn/motv/myhtv1_hls.smil/chunklist_b1200000.m3u8"
       },
       {
         "number": "6",
         "name": "YTN HÀN QUỐC",
         "tags": ["channel","vod"],
+        "description": "Show firm cartoon and amime kit",
+        "url_image": "link image",
         "url": "http://live.cdn.mobifonetv.vn/motv/myhtv1_hls.smil/chunklist_b1200000.m3u8"
       },
       {
         "number": "7",
         "name": "RTPI ASIA",
         "tags": ["vodnew","vod"],
+        "description": "Show firm cartoon and amime kit",
+        "url_image": "link image",
         "url": "http://live.cdn.mobifonetv.vn/motv/myhtv1_hls.smil/chunklist_b1200000.m3u8"
       },
       {
         "number": "9",
         "name": "TVE",
         "tags": ["vod","vodnew"],
+        "description": "Show firm cartoon and amime kit",
+        "url_image": "link image",
         "url": "http://live.cdn.mobifonetv.vn/motv/myhtv1_hls.smil/chunklist_b1200000.m3u8"
       },
       {
         "number": "10",
         "name": "VTV3",
         "tags": ["channel","vod"],
+        "description": "Show firm cartoon and amime kit",
+        "url_image": "link image",
         "url": "http://live.cdn.mobifonetv.vn/motv/myhtv1_hls.smil/chunklist_b1200000.m3u8"
       }
     ]
