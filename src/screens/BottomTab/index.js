@@ -1,8 +1,6 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Block} from '../../components';
-import {TouchableOpacity, View, Text} from 'react-native';
-import AntDesign from 'react-native-vector-icons/AntDesign';
-import styles from './styles';
+import {View, Text} from 'react-native';
 const menus = ['home', 'search1', 'user'];
 const BottomTab = () => {
   return (
