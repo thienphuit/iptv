@@ -48,7 +48,7 @@ const MyModal = ({modalVisible, setModalVisible, channel, saveChannel}) => {
         <Block center style={styles.popup}>
           <Block style={styles.popupContent}>
             <TextView bold primary>
-              Name channel
+              Channel name
             </TextView>
             <Input
               defaultValue={channel.name}
@@ -63,7 +63,7 @@ const MyModal = ({modalVisible, setModalVisible, channel, saveChannel}) => {
               onChangeText={e => (channelJson.url = e)}
             />
             <TextView bold primary>
-              Descriptions movie
+              Movie Descriptions
             </TextView>
             <Input
               defaultValue={channel.description}

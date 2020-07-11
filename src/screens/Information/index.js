@@ -16,11 +16,12 @@ const Information = ({navigation}) => {
           App play channel free, always update new movies hot,Bring a cool
           experience.
         </TextView>
-        <Button onPress={() => navigation.navigate('Admin')}>
+        {/* link admin */}
+        {/* <Button onPress={() => navigation.navigate('Admin')}>
           <TextView gray right caption style={styles.textDecoration}>
             Link addmin
           </TextView>
-        </Button>
+        </Button> */}
       </Block>
     </Block>
   );
