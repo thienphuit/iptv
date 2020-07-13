@@ -35,6 +35,9 @@ const styles = StyleSheet.create({
     height: 6,
     borderRadius: 6,
   },
+  titleName: {
+    marginBottom: 10,
+  },
 });
 
 export default styles;

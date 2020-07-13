@@ -95,7 +95,7 @@ export default () => (
         options={{
           tabBarLabel: 'Explore',
           tabBarIcon: ({color}) => (
-            <Icon name="ios-person" size={26} color={color} />
+            <Icon name="ios-tv" size={26} color={color} />
           ),
         }}
       />

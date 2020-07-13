@@ -62,7 +62,7 @@ class Settings extends Component {
           <Block style={styles.inputs}>
             <Block row space="between" margin={[10, 0]} style={styles.inputRow}>
               <Block>
-                <TextView gray2 style={{marginBottom: 10}}>
+                <TextView gray2 style={styles.titleName}>
                   UserName
                 </TextView>
                 {this.renderEdit('username')}
@@ -76,7 +76,7 @@ class Settings extends Component {
             </Block>
             <Block row space="between" margin={[10, 0]} style={styles.inputRow}>
               <Block>
-                <TextView gray2 style={{marginBottom: 10}}>
+                <TextView gray2 style={styles.titleName}>
                   Location
                 </TextView>
                 {this.renderEdit('location')}
@@ -90,7 +90,7 @@ class Settings extends Component {
             </Block>
             <Block row space="between" margin={[10, 0]} style={styles.inputRow}>
               <Block>
-                <TextView gray2 style={{marginBottom: 10}}>
+                <TextView gray2 style={styles.titleName}>
                   E-mail
                 </TextView>
                 <TextView bold>{users.email}</TextView>
@@ -100,7 +100,7 @@ class Settings extends Component {
           <Divider margin={[theme.sizes.base, theme.sizes.base * 2]} />
           <Block style={styles.sliders}>
             <Block margin={[10, 0]}>
-              <TextView gray2 style={{marginBottom: 10}}>
+              <TextView gray2 style={styles.titleName}>
                 Budget
               </TextView>
               <Slider
@@ -119,7 +119,7 @@ class Settings extends Component {
               </TextView>
             </Block>
             <Block margin={[10, 0]}>
-              <TextView gray2 style={{marginBottom: 10}}>
+              <TextView gray2 style={styles.titleName}>
                 Monthly Cap
               </TextView>
               <Slider

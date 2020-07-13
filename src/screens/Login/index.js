@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {
   ActivityIndicator,
   Keyboard,
@@ -17,12 +17,12 @@ const Login = ({navigation}) => {
   const [errors, setError] = useState([]);
   const [email, setEmail] = useState(VALID_EMAIL);
   const [password, setPassword] = useState(VALID_PASSWORD);
-  /* state = {
-    email: VALID_EMAIL,
-    password: VALID_PASSWORD,
-    errors: [],
-    loading: false,
-  }; */
+  // state = {
+  //   email: VALID_EMAIL,
+  //   password: VALID_PASSWORD,
+  //   errors: [],
+  //   loading: false,
+  // };
   const handleLogin = () => {
     // const {navigation} = this.props;
     // const {email, password} = this.props;

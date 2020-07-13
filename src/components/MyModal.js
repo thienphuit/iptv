@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet, Dimensions, Modal} from 'react-native';
 import {Block, TextView, Button, Input} from './index';
+import {theme} from '../constants';
 
 const screen = Dimensions.get('window');
 const styles = StyleSheet.create({
@@ -24,16 +25,19 @@ const styles = StyleSheet.create({
     width: screen.width - 80,
     marginHorizontal: 20,
     borderRadius: 7,
+    padding: theme.sizes.base,
   },
   popupContent: {
     //alignItems: 'center',
     margin: 5,
-    height: 250,
+    height: 300,
   },
   btnClose: {
     height: 20,
     backgroundColor: '#20b2aa',
     padding: 20,
+    marginRight: theme.sizes.base,
+    marginLeft: theme.sizes.base,
   },
 });
 const MyModal = ({modalVisible, setModalVisible, channel, saveChannel}) => {
@@ -43,20 +47,29 @@ const MyModal = ({modalVisible, setModalVisible, channel, saveChannel}) => {
       <Block center middle flex={1} style={styles.modal}>
         <Block center style={styles.popup}>
           <Block style={styles.popupContent}>
-            <TextView>Name</TextView>
+            <TextView bold primary>
+              Channel name
+            </TextView>
             <Input
               defaultValue={channel.name}
               onChangeText={e => (channelJson.name = e)}
             />
 
-            <TextView>Name</TextView>
+            <TextView bold primary>
+              Channel Url
+            </TextView>
             <Input
               defaultValue={channel.url}
               onChangeText={e => (channelJson.url = e)}
             />
+            <TextView bold primary>
+              Movie Descriptions
+            </TextView>
+            <Input
+              defaultValue={channel.description}
+              onChangeText={e => (channelJson.description = e)}
+            />
           </Block>
-        </Block>
-        <Block>
           <Block row>
             <Button
               style={styles.btnClose}
